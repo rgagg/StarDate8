@@ -8,17 +8,48 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+  private let screenWidth = UIScreen.main.bounds.width
+  private let screenHeight = UIScreen.main.bounds.height
+  
+  
+  var body: some View {
+    
+    ZStack {
+      Color("Backhround")
+        .ignoresSafeArea()
+      
+      VStack {
+        Spacer()
+        
+        Text("Stardate")
+          .font(.title)
+          .foregroundStyle(.white)
+
+        Text("76387.2")
+          .font(.title)
+          .foregroundStyle(.cyan)
+        
+        Spacer()
+        
+        Button {
+          // code
+        } label: {
+          Image("StarfleetLogo copy")
+            .resizable()
+            .scaledToFit()
+            .foregroundStyle(.tint)
+            .frame(width: screenWidth / 2)
+            .border(.red, width: 2)
         }
-        .padding()
+       
+        Spacer()
+        
+      }
+      .border(.red, width: 2)
     }
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
